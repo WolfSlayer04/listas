@@ -136,13 +136,12 @@ function displayStudents() {
     });
 }
 
-
 /**
  * Ejercicio 4: Manejo de productos en una tienda.
  * Permite agregar, eliminar y ordenar productos por nombre, y calcula el costo total.
  */
 let storeProducts = [];
-let productId = 1;
+let productId = 1; // ID único para cada producto
 
 /**
  * Agrega un producto a la tienda con su nombre y precio.
@@ -150,10 +149,20 @@ let productId = 1;
 function addStoreProduct() {
     let name = document.getElementById('productName').value;
     let price = parseFloat(document.getElementById('productPrice').value);
+    
     if (name && !isNaN(price)) {
+        // Añadir el nuevo producto a la lista
         storeProducts.push({ id: productId, name: name, price: price });
-        productId++;
+        productId++; // Incrementar el ID para el próximo producto
+        
+        // Limpiar los campos de entrada
+        document.getElementById('productName').value = '';
+        document.getElementById('productPrice').value = '';
+        
+        // Actualizar la lista de productos y el costo total
         displayStoreProducts();
+    } else {
+        alert('Por favor, ingresa un nombre de producto válido y un precio numérico.');
     }
 }
 
@@ -162,8 +171,19 @@ function addStoreProduct() {
  */
 function deleteStoreProduct() {
     let deleteKey = parseInt(document.getElementById('deleteProductKey').value);
-    storeProducts = storeProducts.filter(product => product.id !== deleteKey);
-    displayStoreProducts();
+    
+    if (!isNaN(deleteKey)) {
+        // Filtrar los productos para eliminar el que coincida con el ID
+        storeProducts = storeProducts.filter(product => product.id !== deleteKey);
+        
+        // Limpiar el campo de entrada
+        document.getElementById('deleteProductKey').value = '';
+        
+        // Actualizar la lista de productos
+        displayStoreProducts();
+    } else {
+        alert('Por favor, ingresa un ID de producto válido.');
+    }
 }
 
 /**
@@ -171,7 +191,7 @@ function deleteStoreProduct() {
  */
 function sortProducts() {
     storeProducts.sort((a, b) => a.name.localeCompare(b.name));
-    displayStoreProducts();
+    displayStoreProducts(); // Actualiza la lista de productos ordenados
 }
 
 /**
@@ -180,12 +200,18 @@ function sortProducts() {
 function displayStoreProducts() {
     let list = document.getElementById('storeProductList');
     let totalCost = 0;
+    
+    // Limpiar la lista actual antes de actualizar
     list.innerHTML = '';
+    
+    // Recorrer los productos y agregarlos al HTML
     storeProducts.forEach(product => {
-        list.innerHTML += `<li>${product.name} - Precio: $${product.price}</li>`;
-        totalCost += product.price;
+        list.innerHTML += `<li>ID: ${product.id} - ${product.name} - Precio: $${product.price.toFixed(2)}</li>`;
+        totalCost += product.price; // Sumar el costo total
     });
-    document.getElementById('totalCost').textContent = `$${totalCost}`;
+    
+    // Mostrar el costo total en el DOM
+    document.getElementById('totalCost').textContent = `Costo total: $${totalCost.toFixed(2)}`;
 }
 
 

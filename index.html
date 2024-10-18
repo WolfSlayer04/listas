@@ -43,20 +43,25 @@
             <ul id="failedStudents"></ul>
         </section>
 
-        <!-- Ejercicio 4: Eliminar y ordenar productos -->
-        <section id="exercise4">
-            <h2>Ejercicio 4: Eliminar y ordenar productos</h2>
-            <input type="text" id="productName" placeholder="Nombre del Producto">
-            <input type="number" id="productPrice" placeholder="Precio">
-            <button onclick="addStoreProduct()">Agregar Producto</button>
-            <input type="text" id="deleteProductKey" placeholder="Clave del Producto a Eliminar">
-            <button onclick="deleteStoreProduct()">Eliminar Producto</button>
-            <button onclick="sortProducts()">Ordenar Productos</button>
-            <h3>Productos en la Tienda:</h3>
-            <ul id="storeProducts"></ul>
-            <h3>Costo Total:</h3>
-            <p id="totalCost"></p>
-        </section>
+        <h2>Ejercicio 4: Manejo de productos en una tienda</h2>
+    
+        <!-- Formulario para agregar un producto -->
+        <input type="text" id="productName" placeholder="Nombre del producto" />
+        <input type="number" id="productPrice" placeholder="Precio del producto" />
+        <button onclick="addStoreProduct()">Agregar Producto</button>
+        
+        <!-- Formulario para eliminar un producto -->
+        <input type="number" id="deleteProductKey" placeholder="ID del producto a eliminar" />
+        <button onclick="deleteStoreProduct()">Eliminar Producto</button>
+        
+        <!-- Botón para ordenar los productos -->
+        <button onclick="sortProducts()">Ordenar Productos</button>
+        
+        <!-- Lista de productos en la tienda -->
+        <ul id="storeProductList"></ul>
+        
+        <!-- Mostrar el costo total -->
+        <p id="totalCost">Costo total: $0.00</p>
 
         <!-- Ejercicio 5: Listar palabras por letra -->
         <section id="exercise5">
