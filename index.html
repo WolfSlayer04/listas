@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Ejercicios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aplicación de Ejercicios</h1>
+        
+        <!-- Ejercicio 1: Productos disponibles y retirados -->
+        <section id="exercise1">
+            <h2>Ejercicio 1: Productos disponibles y retirados</h2>
+            <button onclick="addProduct()">Agregar Producto</button>
+            <button onclick="removeProduct()">Retirar Producto</button>
+            <h3>Productos Disponibles:</h3>
+            <ul id="availableProducts"></ul>
+            <h3>Productos Retirados:</h3>
+            <ul id="removedProducts"></ul>
+        </section>
+        
+        <!-- Ejercicio 2: Pares e Impares -->
+        <section id="exercise2">
+            <h2>Ejercicio 2: Pares e Impares</h2>
+            <button onclick="generateRandomNumbers()">Generar Números</button>
+            <h3>Números Pares:</h3>
+            <ul id="evenNumbers"></ul>
+            <h3>Números Impares:</h3>
+            <ul id="oddNumbers"></ul>
+        </section>
+
+        <!-- Ejercicio 3: Aprobados y Reprobados -->
+        <section id="exercise3">
+            <h2>Ejercicio 3: Aprobados y Reprobados</h2>
+            <input type="text" id="studentName" placeholder="Nombre del Alumno">
+            <input type="number" id="studentGrade" placeholder="Calificación">
+            <button onclick="addStudent()">Agregar Alumno</button>
+            <h3>Alumnos Aprobados:</h3>
+            <ul id="approvedStudents"></ul>
+            <h3>Alumnos Reprobados:</h3>
+            <ul id="failedStudents"></ul>
+        </section>
+
+        <!-- Ejercicio 4: Eliminar y ordenar productos -->
+        <section id="exercise4">
+            <h2>Ejercicio 4: Eliminar y ordenar productos</h2>
+            <input type="text" id="productName" placeholder="Nombre del Producto">
+            <input type="number" id="productPrice" placeholder="Precio">
+            <button onclick="addStoreProduct()">Agregar Producto</button>
+            <input type="text" id="deleteProductKey" placeholder="Clave del Producto a Eliminar">
+            <button onclick="deleteStoreProduct()">Eliminar Producto</button>
+            <button onclick="sortProducts()">Ordenar Productos</button>
+            <h3>Productos en la Tienda:</h3>
+            <ul id="storeProducts"></ul>
+            <h3>Costo Total:</h3>
+            <p id="totalCost"></p>
+        </section>
+
+        <!-- Ejercicio 5: Listar palabras por letra -->
+        <section id="exercise5">
+            <h2>Ejercicio 5: Listar palabras por letra</h2>
+            <input type="text" id="wordInput" placeholder="Agregar palabra">
+            <button onclick="addWord()">Agregar Palabra</button>
+            <div id="wordLists"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
